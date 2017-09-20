@@ -3,7 +3,6 @@ import './display.css';
 
 
 const Display = ({ user }) => {
-  console.log(user, 'user');
   return (
     <div className="ui centered raised orange card">
       <a className="image">

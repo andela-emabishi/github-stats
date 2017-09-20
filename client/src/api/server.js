@@ -1,20 +1,12 @@
 import axios from 'axios';
-// const axios = require('axios');
+import {defaultUserError} from '../defaultData';
 
-export default function fetchUser(username) {
-  axios.get(`https://api.github.com/users/${username}`)
-  .then((response) => {
-    console.log(response.data)
-    if (response.statusText === 'OK' || response.status === '200') {
-      console.log(`API call success ${response.status} ${response.statusText}`);
-      
-      let user = response.data;
-      user = JSON.parse(user);
-      return user;
-    } else {
-      throw new Error(`Error ${response.status} ${response.statusText}`);
-    } 
-  })
+export const fetchUser = (username) => {
+  return (
+    axios
+      .get(
+        `https://api.github.com/users/${username}?client_id=aae10265963c19909412
+        &client_secret=94a1551edaedc85e7b70ebb58045eff530e7c99f`
+      )
+  );
 }
-
-// fetchUser('emabishi')
