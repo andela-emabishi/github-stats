@@ -14,10 +14,16 @@ class GithubStats extends React.Component {
     }
   }
 
-  handleSearchClick(event) {
-
+  handleSearchClick = (event) => {
+    const userName = event.target.value;
+    // debounce input with setTimeout
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    const timeoutId = setTimeout(() => {
+      this.setState({ userName })
+    }, 1500);
   }
-
 
   render() {
     return (
