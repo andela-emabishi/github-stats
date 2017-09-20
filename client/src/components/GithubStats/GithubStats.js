@@ -4,7 +4,7 @@ import Search from '../Search/Search';
 import Display from '../Display/Display';
 import Message from '../Message/Message';
 
-import { defaultUser } from '../../defaultData';
+import { defaultUser, defaultUserError } from '../../defaultData';
 import { fetchUser } from '../../api/server';
 
 class GithubStats extends React.Component {
